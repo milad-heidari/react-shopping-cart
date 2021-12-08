@@ -1,0 +1,45 @@
+.nav{
+    display: flex;
+        justify-content: center;
+        max-width: 1970px;
+        width: 100vw;
+        background-color: var(--tiffanyBlueColor);
+
+}
+
+.nav__container{
+    display: flex;
+    padding: 10px;
+    max-width: 1970px;
+    width: 100%;
+    /* align-content: center; */
+    justify-content: space-around;
+    /* align-items: center; */
+
+}
+
+.nav__container-title{
+}
+
+.nav__container-cart-icon{
+    position: relative;
+    color: var(--navyBlue);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.nav__container-cart-badge{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -8px;
+    top: -2px;
+    height: 15px;
+    width: 15px;
+    font-size: 1rem;
+    color: var(--white);
+    border-radius: 100%;
+    background-color: var(--red);
+
+}

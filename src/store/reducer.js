@@ -5,11 +5,11 @@ const initState = {
 
 const reducer = (state=initState,action)=>{
 
-    let newState;
+    let newState=state;
 
     switch (action.type) {
         case actions.GET_PRODUCTS_SUCCESS:
-
+            newState = {...state,products:action.payload}
             break;
         case actions.GET_PRODUCTS_FAILED:
             
@@ -17,7 +17,7 @@ const reducer = (state=initState,action)=>{
         default:
             break;
     }
-
+    return newState
 }
 
 export default reducer;

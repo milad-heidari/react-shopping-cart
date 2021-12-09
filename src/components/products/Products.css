@@ -1,0 +1,17 @@
+.products-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 1970px;
+}
+
+.products-container{
+    display: grid;
+    width: 100%;
+    margin-top: 10px;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+}

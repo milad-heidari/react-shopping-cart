@@ -13,10 +13,19 @@ const getProductsWorker = function*(action){
             return httpService.get(action.payload.url)
         })
 
-        console.log('productsResult',productsResult)
+        yield put({
+            type:actions.GET_PRODUCTS_SUCCESS,
+            payload:productsResult.data
+        })
+
+        // console.log('productsResult',productsResult)
 
     } catch (error) {
         console.error(error)
+        yield put({
+            type:actions.GET_PRODUCTS_FAILED,
+            payload:error
+        })
     }
 
 }

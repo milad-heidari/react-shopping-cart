@@ -10,9 +10,7 @@
 .nav__container{
     display: flex;
     padding: 10px;
-    /* max-width: 1970; */
     width: 100%;
-    /* align-content: center; */
     justify-content: space-around;
     align-items: center;
 

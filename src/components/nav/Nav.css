@@ -1,20 +1,18 @@
 .nav{
     display: flex;
-        justify-content: center;
-        max-width: 1970px;
-        width: 100vw;
-        background-color: var(--tiffanyBlueColor);
+    justify-content: center;
+    max-width: 1970px;
+    width: 100%;
+    background-color: var(--tiffanyBlueColor);
 
 }
 
 .nav__container{
     display: flex;
     padding: 10px;
-    max-width: 1970px;
     width: 100%;
-    /* align-content: center; */
     justify-content: space-around;
-    /* align-items: center; */
+    align-items: center;
 
 }
 

@@ -7,9 +7,8 @@ function Products({ getProducts,products }) {
   useEffect(() => {
       getProducts({ url: "products" });
     }, []);
-    console.log('state',products)
 
-  const renderProductList = products.map(product => <Product key={product.id} title={product.title} image={product.image} price={product.price} />)
+  const renderProductList = products.map(product => <Product key={product.id} product={{...product}} />)
 
   return (
     <section className="products-section">

@@ -1,6 +1,7 @@
 import actions from './actions'
 const initState = {
     products:[],
+    cart:[],
 }
 
 const reducer = (state=initState,action)=>{
@@ -13,6 +14,9 @@ const reducer = (state=initState,action)=>{
             break;
         case actions.GET_PRODUCTS_FAILED:
             
+            break;
+        case actions.ADD_TO_CART:
+            newState= {...state,cart:[...state.cart,action.payload]}
             break;
         default:
             break;

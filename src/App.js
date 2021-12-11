@@ -1,15 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import Modal from './components/modal/Modal';
+import Cart from './components/cart/Cart';
 import Nav from "./components/nav/Nav";
 import Products from './components/products/Products';
 
-function App({cartVisibility}) {
+function App({cartVisibility,cartItems}) {
   
   return (
     <div className='App'>
-      <Nav/>
-      {cartVisibility ? <Modal/>:null}
+      <Nav cartLength={cartItems.length}/>
+      {cartVisibility ? <Cart/>:null}
       <Products/>
     </div>
   );
@@ -17,7 +17,8 @@ function App({cartVisibility}) {
 
 const mapState = (state)=>{
   return {
-    cartVisibility:state.cartVisibility
+    cartVisibility:state.cartVisibility,
+    cartItems:state.cartItems
   }
 }
 

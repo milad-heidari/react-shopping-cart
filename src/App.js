@@ -1,14 +1,25 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import Cart from './components/cart/Cart';
 import Nav from "./components/nav/Nav";
 import Products from './components/products/Products';
 
-function App() {
+function App({cartVisibility,cartItems}) {
+  
   return (
     <div className='App'>
-      <Nav/>
+      <Nav cartLength={cartItems.length}/>
+      {cartVisibility ? <Cart/>:null}
       <Products/>
     </div>
   );
 }
 
-export default App;
+const mapState = (state)=>{
+  return {
+    cartVisibility:state.cartVisibility,
+    cartItems:state.cartItems
+  }
+}
+
+export default connect(mapState)(App);

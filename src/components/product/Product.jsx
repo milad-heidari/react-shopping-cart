@@ -2,16 +2,33 @@ import React from 'react'
 import {connect} from 'react-redux'
 import actions from '../../store/actions'
 import './Product.css'
-function Product({product,addToCart}) {
+function Product({product,addToCart,changeQuantity,cartItems}) {
 
     const addToCartHandler = ()=>{
-      addToCart({
-        id:product.id,
-        title:product.title,
-        image:product.image,
-        price:product.price,
-        quantity:1
-      })
+      const cartItemsID= cartItems.map(item => item.id)
+      if (cartItemsID.includes(product.id)) {
+       const existProduct =  cartItems.filter(item =>{
+          if ( item.id === product.id) {
+            return item
+          }
+        })
+        changeQuantity({
+          id:product.id,
+          title:product.title,
+          image:product.image,
+          price:product.price,
+          quantity:existProduct[0]['quantity'] + 1
+        })
+      }else {
+
+        addToCart({
+          id:product.id,
+          title:product.title,
+          image:product.image,
+          price:product.price,
+          quantity:1
+        })
+      }
     }
 
     return (
@@ -24,6 +41,12 @@ function Product({product,addToCart}) {
     )
 }
 
+const mapState = (state)=>{
+  return {
+    cartItems:state.cartItems
+  }
+}
+
 const mapDispatch = (dispatch)=>{
   return {
     addToCart:(payload)=>{
@@ -31,8 +54,14 @@ const mapDispatch = (dispatch)=>{
         type:actions.ADD_TO_CART,
         payload
       })
-    }
+    },
+    changeQuantity:(payload)=>{
+      dispatch({
+        type:actions.CHANGE_QUANTITY,
+        payload
+      })
+    },
   }
 }
 
-export default connect(null,mapDispatch)(Product)
+export default connect(mapState,mapDispatch)(Product)

@@ -42,7 +42,7 @@ const reducer = (state=initState,action)=>{
         case actions.REMOVE_CART_ITEM:
             newState={
                 ...state,
-                cartItems:state.cartItems.filter(item=> item.id != action.payload.id )
+                cartItems:state.cartItems.filter(item=> item.id !== action.payload.id )
             }
             break;
         default:

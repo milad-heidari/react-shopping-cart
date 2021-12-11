@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import actions from '../../store/actions'
 import './CartItem.css'
-function CartItem({data,changeQuantity,cartItems}) {
+function CartItem({data,changeQuantity,cartItems,removeItemFromCart}) {
 
     const productFromState=cartItems.filter(item=>{
       if (item.id === data.id) {
@@ -33,6 +33,12 @@ function CartItem({data,changeQuantity,cartItems}) {
       })
     }
 
+    const trashBtnHandler = ()=>{
+      removeItemFromCart({
+        id:data.id
+      })
+    }
+
     return (
         <div className="cart-item">
         <img src={data.image} alt="pic" />
@@ -44,6 +50,7 @@ function CartItem({data,changeQuantity,cartItems}) {
           <i onClick={incrementBtnHandler} className="fa fa-plus"></i>
         </div>
           <p>{`$${data.price * productFromState[0].quantity}`}</p>
+          <i onClick={trashBtnHandler} className="fas fa-trash"></i>
       </div>
     )
 }
@@ -59,6 +66,12 @@ const mapDispatch = (dispatch)=>{
     changeQuantity:(payload)=>{
       dispatch({
         type:actions.CHANGE_QUANTITY,
+        payload
+      })
+    },
+    removeItemFromCart:(payload)=>{
+      dispatch({
+        type:actions.REMOVE_CART_ITEM,
         payload
       })
     }

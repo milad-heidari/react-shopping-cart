@@ -5,7 +5,13 @@ import './Product.css'
 function Product({product,addToCart}) {
 
     const addToCartHandler = ()=>{
-      addToCart({...product})
+      addToCart({
+        id:product.id,
+        title:product.title,
+        image:product.image,
+        price:product.price,
+        quantity:1
+      })
     }
 
     return (

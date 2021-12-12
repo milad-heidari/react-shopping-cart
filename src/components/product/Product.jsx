@@ -29,7 +29,7 @@ function Product({product,addToCart,changeQuantity,cartItems}) {
           price:product.price,
           quantity:1
         })
-       }else {alert('Maximum shopping cart items are 10')} 
+       }else {alert('Maximum shopping cart items are 5')} 
       }
     }
 

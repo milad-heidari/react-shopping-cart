@@ -5,10 +5,6 @@
     padding: 20px;
     background-color:var(--white);
     border-radius: 10px;
-    /* margin: 6px; */
-    /* width: 250px; */
-    /* height: 120px; */
-    /* background-color: yellow; */
 }
 
 .product-container__title{
@@ -31,8 +27,8 @@
 }
 
 .product-container button {
-    color: white;
-    background-color: tomato;
+    color: var(--white);
+    background-color: var(--red);
     width: 80%;
     padding:8px 0;
     border: none;

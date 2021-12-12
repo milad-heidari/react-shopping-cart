@@ -14,6 +14,8 @@
     --navyBlue:#004369;
     --red:#DB1F48;
     --white:#FBFBFB;
+    --black: rgba(0, 0, 0, 0.5);
+    --gray:rgb(207,207,207)
 }
 
 body{

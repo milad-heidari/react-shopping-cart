@@ -5,7 +5,7 @@
     justify-content: space-between;
     padding: 6px;
     margin: 4px 0;
-    border: solid 1px rgb(207, 207, 207);
+    border: solid 1px var(--gray);
 }
 
 .cart-item__title{

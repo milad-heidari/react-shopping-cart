@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--black);
 }
 
 .cart-content{
@@ -21,8 +21,8 @@
     display:flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #8C82FC;
-    background-color: white;
+    border-bottom: 1px solid var(--navyBlue);
+    background-color: var(--white);
     padding: 12px 8px;
 }
 .cart-header h4 {
@@ -41,24 +41,14 @@
     display: flex;
     justify-items: flex-start;
     flex-direction: column;
-    background-color: white;
+    background-color: var(--white);
     align-items: flex-start;
 }
 
 .cart-footer{
     display: flex;
     justify-content: center;
-    border-top: 1px solid #8C82FC;
+    border-top: 1px solid var(--navyBlue);
     padding: 10px 10px;
-    background-color: white;
-}
-
-.cart-footer button{
-    color: white;
-    background-color: tomato;
-    width: 80%;
-    padding:8px 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
+    background-color: var(--white);
 }

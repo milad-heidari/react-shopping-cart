@@ -21,6 +21,7 @@ function Product({product,addToCart,changeQuantity,cartItems}) {
         })
       }else {
 
+       if (cartItems.length <= 4) {
         addToCart({
           id:product.id,
           title:product.title,
@@ -28,6 +29,7 @@ function Product({product,addToCart,changeQuantity,cartItems}) {
           price:product.price,
           quantity:1
         })
+       }else {alert('Maximum shopping cart items are 10')}
       }
     }
 

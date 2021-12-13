@@ -8,10 +8,10 @@
     align-items: center;
     justify-content: center;
     background-color: var(--black);
+    width: 100vw;
 }
 
 .cart-content{
-    width: 700px;
     display: flex;
     flex-direction: column;
     border-radius:5px;

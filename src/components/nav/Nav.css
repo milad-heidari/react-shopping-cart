@@ -4,7 +4,8 @@
     max-width: 1970px;
     width: 100%;
     background-color: var(--tiffanyBlueColor);
-
+    position: sticky;
+    top: 0;
 }
 
 .nav__container{

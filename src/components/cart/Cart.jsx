@@ -15,7 +15,6 @@ function Cart({cartItems,closeCart}) {
       closeCart()
     }
     return (
-        <div>
             <div className="cart">
       <div className="cart-content">
         {/* header  */}
@@ -37,7 +36,6 @@ function Cart({cartItems,closeCart}) {
         </div>
       </div>
     </div>
-        </div>
     )
 }
 

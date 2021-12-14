@@ -5,12 +5,19 @@ import CartItem from '../cartItem/CartItem'
 import './Cart.css'
 function Cart({cartItems,closeCart}) {
 
+    /**
+     * render items cart:
+     * 1. get cartItems Array from redux state.
+     * 2. render items with CartItem component.
+     */
     const renderCartItems = cartItems.map(item => <CartItem key={item.id} data={{...item}} />)
 
+    // calculation total price.
     const totalPrice = cartItems.reduce((total,current)=>{
       return total + (current.quantity * current.price)
     },0)
 
+    // dispatch to reducer for close cart component.
     const closeCartHandler=()=>{
       closeCart()
     }

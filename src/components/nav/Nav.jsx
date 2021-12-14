@@ -4,6 +4,8 @@ import actions from "../../store/actions";
 import './Nav.css'
 function Nav({showCart,cartLength}) {
 console.log('cartLength',cartLength)
+
+  // dispatch to reducer for show cart component.
   const showCartHandler = ()=>{
     showCart()
   }

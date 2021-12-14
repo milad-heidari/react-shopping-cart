@@ -2,16 +2,10 @@ import React from 'react'
 import {connect} from 'react-redux'
 import actions from '../../store/actions'
 import './CartItem.css'
-function CartItem({data,changeQuantity,cartItems,removeItemFromCart}) {
-
-    const productFromState=cartItems.filter(item=>{
-      if (item.id === data.id) {
-        return item
-      }
-    })
+function CartItem({data,changeQuantity,removeItemFromCart}) {
 
     const decrementBtnHandler = ()=>{
-      if (productFromState[0].quantity > 1) {
+      if (data.quantity > 1) {
         changeQuantity({
           id:data.id,
           title:data.title,
@@ -46,20 +40,15 @@ function CartItem({data,changeQuantity,cartItems,removeItemFromCart}) {
         <p>{`$${data.price}`}</p>
         <div className="cart-item__qty">
           <i onClick={decrementBtnHandler} className="fas fa-minus"></i>
-          <p>{productFromState[0].quantity}</p>
+          <p>{data.quantity}</p>
           <i onClick={incrementBtnHandler} className="fa fa-plus"></i>
         </div>
-          <p>{`$${data.price * productFromState[0].quantity}`}</p>
+          <p>{`$${data.price * data.quantity}`}</p>
           <i onClick={trashBtnHandler} className="fas fa-trash"></i>
       </div>
     )
 }
 
-const mapState= (state)=>{
-  return {
-    cartItems:state.cartItems
-}
-  }
 
 const mapDispatch = (dispatch)=>{
   return {
@@ -78,4 +67,4 @@ const mapDispatch = (dispatch)=>{
   }
 }
 
-export default connect(mapState,mapDispatch)(CartItem)
+export default connect(null,mapDispatch)(CartItem)

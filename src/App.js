@@ -9,6 +9,7 @@ function App({cartVisibility,cartItems}) {
   return (
     <div className='App'>
       <Nav cartLength={cartItems.length}/>
+      {/* canditional rendering for Cart component */}
       {cartVisibility ? <Cart/>:null}
       <Products/>
     </div>
